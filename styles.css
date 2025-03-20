@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    overflow: hidden; /* For the dots background */
+    position: relative;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+#yesButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#yesButton:hover {
+    transform: scale(1.1);
+}
+
+#noButton {
+    background-color: #f44336;
+    color: white;
+    position: relative;
+    transition: all 0.15s ease-in-out; /* Faster transition */
+}
+
+/* Moving dots background */
+.dots-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.dot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    animation: float 20s linear infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) translateX(0);
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px);
+    }
+}
+
+/* Adjust success message position */
+.success-message {
+    position: fixed;
+    top: 65%; /* Move lower */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+    color: #4CAF50;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    animation: popIn 0.5s ease-out;
+    z-index: 1000;
+}
+
+@keyframes popIn {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Add restart button styles */
+.restart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.restart-button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+} 
