@@ -88,14 +88,15 @@ button {
 /* Adjust success message position */
 .success-message {
     position: fixed;
-    top: 65%; /* Move lower */
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 5rem;
-    color: #4CAF50;
+    font-size: 3rem; /* Slightly smaller font for longer message */
+    color: #f44336; /* Default to red color */
     text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
     animation: popIn 0.5s ease-out;
     z-index: 1000;
+    white-space: nowrap; /* Keep message on one line */
 }
 
 @keyframes popIn {

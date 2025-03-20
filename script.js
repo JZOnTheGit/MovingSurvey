@@ -98,7 +98,8 @@ function showSuccessMessage() {
     // Create and show the success message
     const message = document.createElement('div');
     message.className = 'success-message';
-    message.textContent = 'AYYYYYY!';
+    message.textContent = 'nahhh ion wana be with you';
+    message.style.color = '#f44336'; // Change to red color
     document.querySelector('.container').appendChild(message);
     
     // Add restart button
@@ -112,7 +113,14 @@ function showSuccessMessage() {
 }
 
 // Handle Yes button click
-yesButton.addEventListener('click', showSuccessMessage);
+yesButton.addEventListener('click', () => {
+    // Transform the button into a No button
+    yesButton.style.backgroundColor = '#f44336';
+    yesButton.textContent = 'No';
+    
+    // Add a small delay before showing the message
+    setTimeout(showSuccessMessage, 500);
+});
 
 // Add at the beginning of the file
 function createDots() {
